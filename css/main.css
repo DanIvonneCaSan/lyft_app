@@ -1,0 +1,137 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#log, #sign {
+  border-radius: 5%;
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  padding: 10%;
+}
+#splash {
+   background: linear-gradient(to bottom right, #660066 0%, #ff33cc 100%);
+   height: 100vh;
+}
+
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-inicio1 {
+  display: block;
+  width: 30%;
+  height: 10vh;
+}
+
+.img-inicio {
+  display: block;
+  width: 60%;
+  height: 30vh;
+  margin-top: 50%;
+}
+
+.bckimg{
+  background-image: url(../assets/images/car.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.imglyft_initial{
+  width: inherit;
+  height: 40vh;
+  margin-top: 30%;
+}
+
+.btn-group{
+  display: block;
+  margin-top: 30%;
+  margin-left: 20%;
+}
+
+/* Sign up */
+
+.container {
+  margin-top: 45px;
+}
+
+.fa-chevron-left {
+  color: #c833be;
+  margin: 30px 10px;
+}
+
+.text-up, .text-join {
+  margin: 30px 50px;
+}
+
+.text-up > a, .text-join > a {
+  color: #222628;
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.text-join > a {
+  font-size: 20px;
+  margin-left: 35px;
+}
+
+.line {
+  border-top: 2px solid #aaa7b9;
+  box-shadow: 1px -6px 2px 0px black;
+  width: 90%;
+  margin: auto;
+}
+
+.box-phone {
+  border: 1px solid #c7c4c4;
+  height: 70px;
+  margin-left: 52px;
+  width: 170px;
+}
+
+#inphone, #input2 {
+  font-size: 12px;
+  border: 0;
+}
+
+body > section > p {
+  margin-top: 50px;
+}
+
+.btn-next {
+  width: 80%;
+  height: 50px;
+  margin-top: 50px;
+}
+
+a.btn.btn-default.active {
+  background: #ff33cc;
+  color: white;
+}
+
+#input2 {
+  width: 100px;
+  left: -40px;
+  bottom: 10px;
+}
+
+#check {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #660066 0%, #ff33cc 100%);
+}
+
+#check > img {
+  width: 82%;
+  height: 40vh;
+  margin: 10%;
+}
+
+#ok{
+  color: white;
+  font-size: 30rem;
+  margin-left: 10%;
+}
