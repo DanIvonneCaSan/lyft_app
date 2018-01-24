@@ -63,24 +63,23 @@
   margin: 30px 10px;
 }
 
-.text-up, .text-join {
+.txtsignup, .txtjoin {
   margin: 30px 50px;
 }
 
-.text-up > a, .text-join > a {
+.txtsignup > a, .txtjoin > a {
   color: #222628;
   font-size: 35px;
   text-decoration: none;
 }
 
-.text-join > a {
+.txtjoin > a {
   font-size: 20px;
   margin-left: 35px;
 }
 
 .line {
   border-top: 2px solid #aaa7b9;
-  box-shadow: 1px -6px 2px 0px black;
   width: 90%;
   margin: auto;
 }
