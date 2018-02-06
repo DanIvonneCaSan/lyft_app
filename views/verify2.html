@@ -8,7 +8,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/main.css">
-  <title>Sign Up</title>
+  <title>Lyft</title>
 
   <body>
 
@@ -26,44 +26,37 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-xs-2 col-xs-offset-1">
-            <div class="btn-group" id="flagcont">
-              <button id="lada" class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div id="mapa">-</div>
-              </button>
-            </div>
-            <div>
-              <select id="menuflags" onChange="ver_imagen(this.value);">
-                <option value="opt">Selecciona..</option>
-                <option value="chile">Chile</option>
-                <option value="mexico">México</option>
-                <option value="peru">Perú</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-xs-7 col-xs-offset-1 box-phone">
-            <div class="input-group">
-              <span class="input-group-btn">
-                <button class="btn btn-default" id="input" type="button">
-                  <div id="clave">-</div>
-                </button>
-              <input class="form-control input-lg" id="inphone" type="text" placeholder="10 digitos" required>
-             </span>
-            </div>
-          </div>
-        </div>
+          <div class="col-xs-10 col-xs-offset-1">
+            <form class="form" role="form">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn"><button class="btn btn-default"  type="button"><i class="fa fa-user-o" aria-hidden="true"></i></button></span>
+                  <input type="text" class="form-control" id="inameN" placeholder="Nombre" aria-describedby="sizing-addon2" required>
+                  <input type="text" class="form-control" id="ilastnmN" placeholder="Apellido" aria-describedby="sizing-addon2" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn"><button class="btn btn-default"  type="button"><i class="fa fa-envelope-o" aria-hidden="true"></i></button></span>
+                  <input id="emailAdressN" type="email" class="form-control" placeholder="Email" required pattern=".+@gmail.com"
+                    title="Ingresa correos de GMAIL solamente">
+                </div>
+              </div>
 
-      <div class="row">
-        <p class="lead text-center">We´ll send a text to verify your phone</p>
-
-        <div class="text-center">
-          <a href="./validate.html" class="btn btn-default btn-lg active btnnext" role="button" id="btnnext">Next</a>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label>I agree to Lyft's <a href="#">Terms of Service.</a></label>
+              </div>
+          </div>
+          </form>
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="text-center">
+          <a id="signupval2" class="btn btn-default btn-lg active btn-next disabled" role="button" type="submit">Sign up</a>
+        </div>
+      </div>
     </section>
-
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

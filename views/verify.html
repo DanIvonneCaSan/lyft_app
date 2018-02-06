@@ -31,19 +31,21 @@
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-btn"><button class="btn btn-default"  type="button"><i class="fa fa-user-o" aria-hidden="true"></i></button></span>
-                  <input class="form-control" type="text" placeholder="First Name/Last Name">
+                  <input type="text" class="form-control" id="iname" placeholder="Nombre" aria-describedby="sizing-addon2" required>
+                  <input type="text" class="form-control" id="ilastnm" placeholder="Apellido" aria-describedby="sizing-addon2" required>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-btn"><button class="btn btn-default"  type="button"><i class="fa fa-envelope-o" aria-hidden="true"></i></button></span>
-                  <input class="form-control" type="text" placeholder="Email">
+                  <input id="emailAdress" type="email" class="form-control" placeholder="Email" required pattern=".+@gmail.com"
+                    title="Ingresa correos de GMAIL solamente">
                 </div>
               </div>
 
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label>I agree to Lyft'ss <a href="#">Terms of Service.</a></label>
+                <label>I agree to Lyft's <a href="#">Terms of Service.</a></label>
               </div>
           </div>
           </form>
@@ -51,7 +53,7 @@
       </div>
       <div class="row">
         <div class="text-center">
-          <a href="./signupdata.html" class="btn btn-default btn-lg active btn-next" role="button">Next</a>
+          <a id="signupval" class="btn btn-default btn-lg active btn-next disabled" role="button" type="submit">Sign up</a>
         </div>
       </div>
     </section>

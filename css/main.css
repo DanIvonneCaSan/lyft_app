@@ -53,7 +53,31 @@
 }
 
 /* Sign up */
+#menuflags{
+  /* position: fixed;
+  bottom: 45%; */
+}
 
+/* #lada {
+
+  float: left;
+  margin-left: 1%;
+  margin-top: 2%;
+} */
+#flagcont {
+  margin: 0;
+}
+#input{
+  display: block;
+/* padding: 1%; */
+border: none;
+/* margin: 0; */
+}
+
+#mapa{
+  height: 9vh;
+width: 3em;
+}
 .container {
   margin-top: 45px;
 }
@@ -86,21 +110,29 @@
 
 .box-phone {
   border: 1px solid #c7c4c4;
-  height: 70px;
-  margin-left: 52px;
-  width: 170px;
+border-radius: 5%;
+height: 13vh;
+margin-left: 60px;
+width: 50%;
+margin-bottom: 10%;
 }
 
 #inphone, #input2 {
+  /* font-size: 12px;
+  border: 0; */
+
   font-size: 12px;
-  border: 0;
+    border: 0;
+    width: 80%;
+    display: inline-block;
+    padding: 3%;
 }
 
 body > section > p {
   margin-top: 50px;
 }
 
-.btn-next {
+.btnnext {
   width: 80%;
   height: 50px;
   margin-top: 50px;
@@ -133,4 +165,8 @@ a.btn.btn-default.active {
   color: white;
   font-size: 30rem;
   margin-left: 10%;
+}
+
+#iname, #ilastnm, #inameN, #ilastnmN {
+  width:50%;
 }
