@@ -55,7 +55,7 @@ $inPhone.keyup(function() {
 $btnNext.click(function() {
   var phoneNum = document.getElementById("inphone").value;
   if (phoneNum == null || phoneNum.length == 0 || /^\s+$/.test(phoneNum)) {
-    alert("Ingresa un valor");
+    alert("Add a phone number");
     return false;
   } else if (phoneNum.length === 10) {
     $codeV = genCode();
