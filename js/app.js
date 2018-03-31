@@ -29,20 +29,20 @@ $(document).ready(function() {
 
 function ver_imagen(valor){
   if(valor == 'opt'){
-    document.getElementById('mapa').innerHTML = '---';
-    document.getElementById('clave').innerHTML = '--';
+    document.getElementById('map').innerHTML = '---';
+    document.getElementById('code').innerHTML = '--';
   } else if(valor == 'chile'){
-    document.getElementById('mapa').innerHTML = '<img src="../assets/images/chile.png" alt="Chile flag" width="50px"/>';
-    document.getElementById('clave').innerHTML = '33';
+    document.getElementById('map').innerHTML = '<img src="../assets/images/chile.png" alt="Chile flag" width="50px"/>';
+    document.getElementById('code').innerHTML = '33';
   } else if(valor == 'mexico'){
-    document.getElementById('mapa').innerHTML = '<img src="../assets/images/mexico.png" alt="México flag" width="50px"/>';
-    document.getElementById('clave').innerHTML = '52';
+    document.getElementById('map').innerHTML = '<img src="../assets/images/mexico.png" alt="México flag" width="50px"/>';
+    document.getElementById('code').innerHTML = '52';
   } else{
-    document.getElementById('mapa').innerHTML = '<img src="../assets/images/peru.jpg" alt="Perú flag" width="50px"/>';
-    document.getElementById('clave').innerHTML = '47';
+    document.getElementById('map').innerHTML = '<img src="../assets/images/peru.jpg" alt="Perú flag" width="50px"/>';
+    document.getElementById('code').innerHTML = '47';
   }
 }
-
+// Validación del número de teléfono, que sea de 10 dígitos y sólo números
 $inPhone.keyup(function() {
   if ($(this).val().trim().length === 10 && $.isNumeric($(this).val())) {
     $btnNext.removeClass("disabled");
@@ -66,6 +66,13 @@ $btnNext.click(function() {
   return $codeV;
 });
 
+// Generación de un código aleatorio
+function genCode() {
+  var $code = Math.floor(Math.random() * 900) + 100;
+  return $code;
+};
+
+// Generación de un nuevo código cuando se presiona reset
 $reset.click(function() {
   $codeV = genCode();
   localStorage.setItem ("code", $codeV);
@@ -73,50 +80,49 @@ $reset.click(function() {
   return $codeV;
 });
 
-
-function genCode() {
-  var $code = Math.floor(Math.random() * 900) + 100;
-  return $code;
-};
-
 // Validación del código ingresado
-
 $inputValidate.keyup(function() {
   if ($(this).val().trim().length === 3 && localStorage.code === incode.value) {
     $btnNext1.removeClass("disabled");
-    alert ("Código CORRECTO");
+    $btnNext1.addClass("active");
+    alert ("Your code is CORRECT!!");
   } else if ($(this).val().trim().length === 3 && localStorage.code !== incode.value || $(this).val().trim().length === "") {
-    alert ("Código INCORRECTO intenta nuevamente");
+    alert ("Your code is INCORRECT. Try again, please!");
   }
 });
 
-// Almacenando datos de registro
+// Almacenando datos de registro por primera vez
+// No admite campos vacíos y que no se acepten los términos y condiciones
+$btnSignUp.click(function () {
+  console.log("here");
+  if (iname.value !== "" && ilastnm.value !== "" && emailAdress.value !== "") {
+      if ($("#customCheck1").is(':checked')) {
+        // Almacena la información
+        localStorage.setItem("name", iname.value);
+        localStorage.setItem("lastname", ilastnm.value);
+        localStorage.setItem("email", emailAdress.value);
+        // Direcciona a la siguiente página
+        window.location.href = '../views/signupdata.html';
+      } else {
+        // Hacer algo si el checkbox NO ha sido deseleccionado
+        alert("You haven´t accept the terms and conditions.");
+      }
+  } else {
+    alert("Some fields are empty");
+  }
+});
 
-$("#customCheck1").on( 'change', function() {
-    if( $(this).is(':checked') ) {
-        // Hacer algo si el checkbox ha sido seleccionado
-        // alert("El checkbox con valor " + $(this).val() + " ha sido seleccionado");
-        // Botón de registro
-        $btnSignUp.removeClass("disabled");
-          $btnSignUp.click(function() {
-            localStorage.setItem ("name", iname.value);
-            localStorage.setItem ("lastname", ilastnm.value);
-            localStorage.setItem ("email", emailAdress.value);
-            window.location.href = '../views/signupdata.html';
-            });
-        // Botón cuando se registra por primera vez
-        $btnSignUp2.removeClass("disabled");
-        $btnSignUp2.click(function() {
-          localStorage.setItem ("name", inameN.value);
-          localStorage.setItem ("lastname", ilastnmN.value);
-          localStorage.setItem ("email", emailAdressN.value);
-           // Eliminando valores de la memoria
-          localStorage.setItem ("code", "");
-          localStorage.setItem ("telephone", "");
-          window.location.href = '../views/signupdata.html';
-        });
-    } else {
-        // Hacer algo si el checkbox ha sido deseleccionado
-        alert("No haz aceptado los términos y condiciones");
-    }
+// Función cuando inicia sesión
+$btnSignUp2.click(function(){
+  if (inameN.value !== "" && ilastnmN.value !== "" && emailAdressN.value !== "") {
+    localStorage.setItem("name", inameN.value);
+    localStorage.setItem("lastname", ilastnmN.value);
+    localStorage.setItem("email", emailAdressN.value);
+    // Eliminando valores de la memoria, dado que no es necesario mantener su código
+    localStorage.setItem("code", "");
+    localStorage.setItem("telephone", "");
+    window.location.href = '../views/signupdata.html';
+  } else {
+    alert("Some fields are empty. Please complete de registration.")
+  }
 });
